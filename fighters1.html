@@ -29,4 +29,1020 @@
         }
 
         body {
-            font-family: 'Assistant', 'Rubik',
+            font-family: 'Assistant', 'Rubik', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html {
+            scroll-behavior: smooth; /* גלילה חלקה */
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* טיפוגרפיה כללית */
+        h1, h2, h3, h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        .section-padding {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* אנימציות עדינות */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* כפתורים */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            text-align: center;
+            border: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--bg-white);
+            border: 2px solid var(--bg-white);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--bg-white);
+            color: var(--primary-color);
+        }
+
+        /* תפריט ניווט */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: var(--bg-white);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-color);
+            border: none;
+            background: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 120px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(255,255,255,0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        /* אודות */
+        .about {
+            background-color: var(--bg-white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .about-image {
+            background: var(--bg-light);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        .about-image svg {
+            width: 150px;
+            height: 150px;
+            fill: var(--secondary-color);
+        }
+
+        /* שירותים */
+        .services {
+            background-color: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border-top: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+        }
+
+        /* יתרונות */
+        .benefits {
+            background-color: var(--bg-white);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .benefit-item {
+            padding: 2rem;
+        }
+
+        .benefit-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: rgba(26, 117, 178, 0.1);
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* תהליך עבודה */
+        .process {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .process h2 {
+            color: white;
+        }
+
+        .process h2::after {
+            background-color: var(--accent-color);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        /* קו מקשר בין השלבים בדסקטופ */
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            right: 10%;
+            left: 10%;
+            height: 2px;
+            background-color: rgba(255,255,255,0.2);
+            z-index: 0;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 0 0 10px rgba(230, 126, 34, 0.2);
+        }
+
+        .step h3 {
+            color: white;
+        }
+
+        /* המלצות */
+        .testimonials {
+            background-color: var(--bg-light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--bg-white);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '❝';
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 4rem;
+            color: var(--bg-light);
+            line-height: 1;
+            z-index: 0;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .author-info h4 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+        }
+
+        .author-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* שאלות נפוצות */
+        .faq {
+            background-color: var(--bg-white);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            background-color: var(--bg-light);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            padding: 1rem 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        details:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        summary {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-light);
+        }
+
+        /* יצירת קשר */
+        .contact {
+            background-color: var(--bg-light);
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-color);
+            background-color: var(--bg-white);
+            box-shadow: 0 0 0 3px rgba(26, 117, 178, 0.1);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        /* הודעת הצלחה (מוסתרת כברירת מחדל) */
+        #successMessage {
+            display: none;
+            text-align: center;
+            padding: 2rem;
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+            color: #2e7d32;
+        }
+
+        #successMessage svg {
+            width: 60px;
+            height: 60px;
+            fill: #4caf50;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #052236;
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+
+        .footer-info p {
+            margin-bottom: 0.5rem;
+            color: #bdc3c7;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: #bdc3c7;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .copyright {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* התאמה למובייל */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-white);
+                box-shadow: var(--shadow-md);
+                padding: 1rem 0;
+                text-align: center;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                padding: 1rem 0;
+                border-bottom: 1px solid var(--bg-light);
+            }
+
+            nav ul li:last-child {
+                border-bottom: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .about-grid, .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .process-steps::before {
+                display: none;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--secondary-color)"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+                פייטרס<span>.</span>
+            </div>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="פתח תפריט">
+                &#9776;
+            </button>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#hero">ראשי</a></li>
+                    <li><a href="#about">עלינו</a></li>
+                    <li><a href="#services">שירותים</a></li>
+                    <li><a href="#process">איך זה עובד?</a></li>
+                    <li><a href="#faq">שאלות נפוצות</a></li>
+                    <li><a href="#contact">צור קשר</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero">
+        <div class="hero-content fade-in">
+            <h1>נלחמתם בשבילנו, עכשיו תורנו להילחם על הזכויות שלכם.</h1>
+            <p>שירות מקצועי לבדיקת תגמולי מילואים – מוודאים שקיבלתם את מלוא הכסף המגיע לכם מהמעסיק ומביטוח לאומי.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">לביצוע בדיקת זכאות חינם</a>
+                <a href="#services" class="btn btn-secondary">גלו איך אנחנו עוזרים</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding fade-in">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>מי אנחנו - פייטרס</h2>
+                    <p>הקמנו את "פייטרס" מתוך הבנה עמוקה של השטח. אחרי ימי מילואים ארוכים, הדבר האחרון שחייל צריך לעשות זה להתחיל לרדוף אחרי בירוקרטיה, תלושי שכר וחישובי תגמולים מסובכים.</p>
+                    <p>לצערנו, חיילי מילואים רבים לא מקבלים את מלוא התגמול המגיע להם על פי חוק – בין אם עקב טעויות חישוב של המעסיק, חוסר סנכרון מול ביטוח לאומי, או חוסר מודעות לזכויות.</p>
+                    <p><strong>המטרה שלנו פשוטה:</strong> לספק לכם שקט נפשי כלכלי. אנחנו מנתחים את הנתונים, בודקים את תלושי השכר מול אישורי השמ"פ, ומוודאים שכל שקל שמגיע לכם באמת נכנס לחשבון הבנק שלכם.</p>
+                </div>
+                <div class="about-image">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 14h-3v3h-2v-3H8v-2h3v-3h2v3h3v2zm-3-7V3.5L18.5 9H13z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services section-padding fade-in">
+        <div class="container">
+            <h2>השירותים שלנו</h2>
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>בדיקת תגמולי מעסיק</h3>
+                    <p>בחינה מדוקדקת של תלושי השכר שלך לפני, במהלך ואחרי שירות המילואים. נוודא שהמעסיק לא ניכה ימי חופש שלא כחוק ושילם את מלוא השכר כנדרש.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏦</div>
+                    <h3>מיצוי זכויות ביטוח לאומי</h3>
+                    <p>בדיקה האם ביטוח לאומי העביר את התגמול המדויק על בסיס חישוב 3 משכורות אחרונות, כולל בונוסים ושעות נוספות, והאם התגמול הגיע אליך ישירות או דרך המעסיק.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>הפקת דו"ח חוסרים מלא</h3>
+                    <p>הכנת דו"ח מסודר וברור המציג את הפערים הכלכליים (אם קיימים) בין מה שקיבלת למה שמגיע לך, כולל הנחיות ברורות כיצד לדרוש את ההפרשים.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits" class="benefits section-padding fade-in">
+        <div class="container">
+            <h2>למה לבחור בפייטרס?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🛡️</div>
+                    <h3>אמינות ושקיפות</h3>
+                    <p>הכל גלוי ומוסבר בגובה העיניים. אתם יודעים בדיוק איפה הכסף שלכם עומד.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <h3>חסכון בזמן ועצבים</h3>
+                    <p>אנחנו עושים את העבודה השחורה מול המספרים, אתם פשוט מקבלים תוצאות ברורות.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>דיוק מקסימלי</h3>
+                    <p>שימוש במערכות מתקדמות לחישוב מדויק של חוקי העבודה וביטוח לאומי בישראל.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process section-padding fade-in">
+        <div class="container">
+            <h2>איך זה עובד? ב-4 שלבים פשוטים</h2>
+            <div class="process-steps">
+                
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>יצירת קשר</h3>
+                    <p>ממלאים פרטים בסיסיים באתר ומתחילים את התהליך בקלות.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>העברת מסמכים</h3>
+                    <p>מעבירים אלינו באופן מאובטח תלושי שכר ואישורי ימי מילואים (שמ"פ).</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>בדיקה מקיפה</h3>
+                    <p>הצוות שלנו מנתח את הנתונים ומשווה לחוק תגמולי מילואים.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>קבלת דו"ח</h3>
+                    <p>מקבלים דו"ח ברור עם פירוט הכספים החסרים והדרכה לדרישתם.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials section-padding fade-in">
+        <div class="container">
+            <h2>מה אומרים משרתי המילואים?</h2>
+            <div class="testimonials-grid">
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "הייתי בטוח שהמעסיק שלי משלם לי הכל כמו שצריך. אחרי פנייה לפייטרס התברר שהייתה טעות בחישוב השעות הנוספות לפני המילואים. החזירו לי כמעט 3,000 שקלים!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">ע</div>
+                        <div class="author-info">
+                            <h4>עמרי ד.</h4>
+                            <p>לוחם חיל השריון</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "שירות מהיר, יעיל ובעיקר - מוריד את כאב הראש. אחרי חודשיים בעזה הדבר האחרון שרציתי זה להתעסק עם ביטוח לאומי. הם עשו הכל בשבילי."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">מ</div>
+                        <div class="author-info">
+                            <h4>מיכל ר.</h4>
+                            <p>קצינת הנדסה במיל'</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq section-padding fade-in">
+        <div class="container">
+            <h2>שאלות נפוצות</h2>
+            <div class="faq-container">
+                
+                <details>
+                    <summary>אילו מסמכים אני צריך להכין לבדיקה?</summary>
+                    <div class="faq-answer">
+                        כדי לבצע בדיקה מקיפה נצטרך: תלושי שכר של 3 החודשים שקדמו למילואים, תלושי השכר של חודשי המילואים עצמם, ואישור ימי שמ"פ (ניתן להוריד מאזור האישי באתר צה"ל).
+                    </div>
+                </details>
+
+                <details>
+                    <summary>האם המידע שלי נשמר בצורה מאובטחת?</summary>
+                    <div class="faq-answer">
+                        בהחלט. אנחנו מתחייבים לדיסקרטיות מלאה. הנתונים שלכם משמשים אך ורק לצורך חישוב זכאותכם ונמחקים מהמערכות שלנו מיד בסיום התהליך לבקשתכם.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>כמה זמן לוקחת הבדיקה?</summary>
+                    <div class="faq-answer">
+                        מרגע העברת כל המסמכים הדרושים, הדו"ח המפורט שלנו מוכן ונשלח אליכם תוך 3 עד 5 ימי עסקים בלבד.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>האם זה רלוונטי גם לעצמאיים?</summary>
+                    <div class="faq-answer">
+                        כעת השירות שלנו מתמקד בשכירים (עובדים המקבלים תלוש שכר), שכן עיקר טעויות החישוב מתרחשות בתקשורת שבין המעסיק, העובד וביטוח לאומי.
+                    </div>
+                </details>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact section-padding fade-in">
+        <div class="container">
+            <h2>בואו נבדוק מה מגיע לכם</h2>
+            <div class="contact-container">
+                
+                <div id="successMessage">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                    </svg>
+                    <h3>פנייתך התקבלה בהצלחה!</h3>
+                    <p>נציג פייטרס יחזור אליך בהקדם עם הנחיות להמשך התהליך.</p>
+                </div>
+
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">שם מלא:</label>
+                        <input type="text" id="name" class="form-control" required placeholder="ישראל ישראלי">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">טלפון נייד:</label>
+                        <input type="tel" id="phone" class="form-control" required placeholder="050-0000000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">דוא"ל:</label>
+                        <input type="email" id="email" class="form-control" required placeholder="your@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">הודעה / הערות (אופציונלי):</label>
+                        <textarea id="message" class="form-control" placeholder="ספר לנו קצת על ימי המילואים שלך..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">שלחו פנייה לבדיקת שכר</button>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    פייטרס<span style="color:var(--accent-color);">.</span>
+                </div>
+                <p>המרכז לבדיקת תגמולי מילואים</p>
+                <p>מייל: contact@fighters-miluim.co.il</p>
+            </div>
+            <div class="footer-links">
+                <a href="#about">עלינו</a>
+                <a href="#services">שירותים</a>
+                <a href="#faq">שאלות נפוצות</a>
+                <a href="#contact">צור קשר</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 פייטרס - כל הזכויות שמורות. האתר אינו מהווה תחליף לייעוץ משפטי או רואה חשבון.
+        </div>
+    </footer>
+
+    <script>
+        // תפריט מובייל
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // סגירת תפריט בעת לחיצה על קישור במובייל
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 768) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+
+        // טיפול בטופס יצירת קשר והצגת הודעת הצלחה
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // מניעת רענון הדף
+            
+            // אפקט העלמות וטעינה
+            contactForm.style.opacity = '0';
+            setTimeout(() => {
+                contactForm.style.display = 'none';
+                successMessage.style.display = 'block';
+                // אנימציית הופעה להודעה
+                successMessage.animate([
+                    { opacity: 0, transform: 'scale(0.9)' },
+                    { opacity: 1, transform: 'scale(1)' }
+                ], {
+                    duration: 500,
+                    fill: 'forwards'
+                });
+            }, 300);
+        });
+
+        // אנימציות חשיפה בגלילה (Intersection Observer)
+        const faders = document.querySelectorAll('.fade-in');
+
+        const appearOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+        
+        // טעינת אנימציה ראשונית ל-Hero
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.hero-content').classList.add('visible');
+            }, 100);
+        });
+    </script>
+</body>
+</html>
